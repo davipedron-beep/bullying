@@ -3,197 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bullying Stop - Informação e Apoio</title>
+    <title>Bullying Stop - Combatendo Bullying e Ciberbullying</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .image-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-card-content {
+            padding: 1.5rem;
+            background-color: white;
+        }
+
+        .image-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .image-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-section li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .emergency-section {
+            background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .emergency-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .emergency-contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .emergency-contact {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .emergency-contact .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-contact .number {
+            font-size: 1.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+
+        .emergency-contact a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            margin: 1.5rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container-main">
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h1 class="sidebar-title">Bullying Stop</h1>
-                <p class="sidebar-subtitle">Informação e Apoio</p>
-            </div>
-
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link active">Início</a>
-                <a href="o-que-e-bullying.html" class="nav-link">O que é Bullying?</a>
-                <a href="impactos.html" class="nav-link">Impactos</a>
-                <a href="como-agir.html" class="nav-link">Como Agir</a>
-                <a href="recursos.html" class="nav-link">Recursos</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contato.html" class="nav-link">Contato</a>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🛡️ Bullying Stop</div>
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#tipos">Tipos</a>
+                <a href="#impactos">Impactos</a>
+                <a href="#ajuda">Ajuda</a>
             </nav>
-
-            <div class="sidebar-footer">
-                <p class="sidebar-warning">Se você está em perigo, ligue para a polícia ou procure ajuda imediata.</p>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Header -->
-            <header class="header">
-                <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <h2 class="header-title">Bullying e Ciberbullying: Informação e Apoio</h2>
-                <a href="como-agir.html" class="btn-help">Buscar Ajuda</a>
-            </header>
-
-            <!-- Page Content -->
-            <main class="page-content">
-                <!-- Hero Section -->
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Bullying e Ciberbullying: Informação, Prevenção e Apoio</h1>
-                        <p class="hero-description">Um espaço seguro e acolhedor para vítimas, pais, educadores e todos que desejam combater o bullying. Aqui você encontra informações claras, estratégias eficazes e recursos de apoio.</p>
-                        <div class="hero-buttons">
-                            <a href="como-agir.html" class="btn btn-primary">Buscar Ajuda Agora →</a>
-                            <a href="o-que-e-bullying.html" class="btn btn-secondary">Saiba Mais</a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Statistics Section -->
-                <section class="stats">
-                    <div class="stat-card">
-                        <div class="stat-number">70%</div>
-                        <p class="stat-label">De adolescentes já sofreram bullying</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1 em 3</div>
-                        <p class="stat-label">Vítimas de ciberbullying</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">15%</div>
-                        <p class="stat-label">Pensam em suicídio por bullying</p>
-                    </div>
-                </section>
-
-                <!-- Main Sections -->
-                <section class="sections">
-                    <div class="section-header">
-                        <h2>Explore Nossos Recursos</h2>
-                        <p>Tudo que você precisa saber sobre bullying, ciberbullying e como combatê-los.</p>
-                    </div>
-
-                    <div class="section-grid">
-                        <a href="o-que-e-bullying.html" class="section-card">
-                            <div class="card-icon">❓</div>
-                            <h3>O que é Bullying?</h3>
-                            <p>Entenda as definições, tipos e características do bullying e ciberbullying.</p>
-                            <div class="card-link">Explorar →</div>
-                        </a>
-
-                        <a href="impactos.html" class="section-card">
-                            <div class="card-icon">❤️</div>
-                            <h3>Impactos e Consequências</h3>
-                            <p>Conheça os efeitos psicológicos, físicos e sociais do bullying.</p>
-                            <div class="card-link">Explorar →</div>
-                        </a>
-
-                        <a href="como-agir.html" class="section-card">
-                            <div class="card-icon">🛡️</div>
-                            <h3>Como Agir</h3>
-                            <p>Estratégias para vítimas, pais, educadores e observadores.</p>
-                            <div class="card-link">Explorar →</div>
-                        </a>
-
-                        <a href="recursos.html" class="section-card">
-                            <div class="card-icon">📚</div>
-                            <h3>Recursos e Apoio</h3>
-                            <p>Acesso a canais de ajuda, legislação e materiais educativos.</p>
-                            <div class="card-link">Explorar →</div>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Testimonials Section -->
-                <section class="testimonials">
-                    <h2>Histórias de Apoio</h2>
-                    <p class="testimonials-subtitle">Vidas transformadas através da informação e do apoio.</p>
-
-                    <div class="testimonials-grid">
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"Este site me ajudou a entender que não era minha culpa. Agora estou buscando ajuda profissional."</p>
-                            <p class="testimonial-author">Ana, 16 anos</p>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"Como mãe, encontrei aqui as ferramentas para conversar com minha filha sobre bullying."</p>
-                            <p class="testimonial-author">Maria, 42 anos</p>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"Os recursos educativos foram essenciais para implementar um programa anti-bullying na escola."</p>
-                            <p class="testimonial-author">Prof. João, Educador</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CTA Section -->
-                <section class="cta">
-                    <h2>Precisa de Ajuda Imediata?</h2>
-                    <p>Se você está em perigo ou tendo pensamentos suicidas, procure ajuda profissional imediatamente.</p>
-                    <div class="cta-buttons">
-                        <a href="tel:188" class="btn btn-white">Ligar para CVV: 188</a>
-                        <a href="recursos.html" class="btn btn-white-outline">Ver Mais Recursos</a>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Footer -->
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <h3>Sobre</h3>
-                        <p>Um site dedicado à conscientização, prevenção e combate ao bullying e ciberbullying.</p>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Navegação</h3>
-                        <ul>
-                            <li><a href="index.html">Início</a></li>
-                            <li><a href="o-que-e-bullying.html">O que é Bullying?</a></li>
-                            <li><a href="impactos.html">Impactos</a></li>
-                            <li><a href="como-agir.html">Como Agir</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Recursos</h3>
-                        <ul>
-                            <li><a href="#">Guias de Prevenção</a></li>
-                            <li><a href="#">Legislação</a></li>
-                            <li><a href="#">Materiais Educativos</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Legal</h3>
-                        <ul>
-                            <li><a href="#">Privacidade</a></li>
-                            <li><a href="#">Termos de Uso</a></li>
-                            <li><a href="#">Contato</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Bullying Stop. Todos os direitos reservados.</p>
-                </div>
-            </footer>
         </div>
+    </header>
 
-        <!-- Mobile Overlay -->
-        <div class="overlay" id="overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Juntos Contra o Bullying</h1>
+            <p>Informação, prevenção e apoio para combater bullying e ciberbullying</p>
+            <div class="cta-buttons">
+                <a href="#ajuda" class="btn btn-primary">Buscar Ajuda</a>
+                <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Image -->
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663043087508/LLdZWFheVZmHfa8SLuPkXZ/bullying-hero-PAHEvhm8Krt8PQPDGfQCob.webp" alt="Grupo de adolescentes unidos" class="hero-image fade-in">
+
+        <!-- About Section -->
+        <section id="sobre">
+            <h2 class="section-title">O que é Bullying?</h2>
+            <p class="section-subtitle">Bullying é o ato repetido de humiliar, intimidar ou agredir alguém, geralmente em uma posição de poder desigual.</p>
+
+            <div class="image-grid">
+                <div class="image-card fade-in">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663043087508/LLdZWFheVZmHfa8SLuPkXZ/bullying-support-jNFyz2kJtxGiu2c4q2v2oB.webp" alt="Apoio e suporte">
+                    <div class="image-card-content">
+                        <h3>Apoio Profissional</h3>
+                        <p>Procure ajuda de conselheiros, psicólogos e educadores qualificados.</p>
+                    </div>
+                </div>
+
+                <div class="image-card fade-in">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663043087508/LLdZWFheVZmHfa8SLuPkXZ/bullying-awareness-KB4yB7uVWtayKZGhH63dCa.webp" alt="Conscientização sobre ciberbullying">
+                    <div class="image-card-content">
+                        <h3>Ciberbullying</h3>
+                        <p>Assédio online através de redes sociais, mensagens e plataformas digitais.</p>
+                    </div>
+                </div>
+
+                <div class="image-card fade-in">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663043087508/LLdZWFheVZmHfa8SLuPkXZ/bullying-community-PS5MZxV7C6ANKzQcPZgxkA.webp" alt="Comunidade unida">
+                    <div class="image-card-content">
+                        <h3>Comunidade</h3>
+                        <p>Criar ambientes seguros e inclusivos onde todos se sentem acolhidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section id="tipos">
+            <h2 class="section-title">Dados Importantes</h2>
+            <div class="stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">1 em 3</div>
+                    <div class="stat-label">Estudantes sofrem bullying</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">59%</div>
+                    <div class="stat-label">Ciberbullying entre adolescentes</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Bullying online não para</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">+70%</div>
+                    <div class="stat-label">Aumentou durante pandemia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacts Section -->
+        <section id="impactos">
+            <h2 class="section-title">Impactos do Bullying</h2>
+            <p class="section-subtitle">Bullying causa danos profundos que afetam múltiplas áreas da vida.</p>
+
+            <div class="content-section fade-in">
+                <h3>Impactos Psicológicos</h3>
+                <ul>
+                    <li>Ansiedade e depressão</li>
+                    <li>Baixa autoestima</li>
+                    <li>Isolamento social</li>
+                    <li>Pensamentos suicidas</li>
+                </ul>
+            </div>
+
+            <div class="content-section fade-in">
+                <h3>Impactos Acadêmicos</h3>
+                <ul>
+                    <li>Queda no desempenho escolar</li>
+                    <li>Dificuldade de concentração</li>
+                    <li>Absentismo escolar</li>
+                    <li>Abandono dos estudos</li>
+                </ul>
+            </div>
+
+            <div class="content-section fade-in">
+                <h3>Impactos Físicos</h3>
+                <ul>
+                    <li>Lesões e ferimentos</li>
+                    <li>Problemas de sono</li>
+                    <li>Perda de apetite</li>
+                    <li>Doenças psicossomáticas</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Hope Section -->
+        <section>
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663043087508/LLdZWFheVZmHfa8SLuPkXZ/bullying-hope-inZ6jjKd7yLV3V89WjG4q5.webp" alt="Esperança e recuperação" class="hero-image fade-in">
+            
+            <h2 class="section-title">Há Sempre Esperança</h2>
+            <p class="section-subtitle">Com apoio adequado, é possível recuperar-se do bullying e construir uma vida plena.</p>
+
+            <div class="content-section fade-in">
+                <h3>Como Você Pode Ajudar</h3>
+                <ul>
+                    <li>Seja um "upstander" - não seja cúmplice</li>
+                    <li>Apoie quem sofre bullying</li>
+                    <li>Denuncie comportamentos prejudiciais</li>
+                    <li>Crie ambientes seguros e inclusivos</li>
+                    <li>Procure ajuda profissional quando necessário</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Emergency Section -->
+        <section id="ajuda" class="emergency-section fade-in">
+            <h2>🆘 Precisa de Ajuda Agora?</h2>
+            <p>Se você ou alguém que conhece está sofrendo bullying, existem recursos disponíveis 24/7</p>
+            
+            <div class="emergency-contacts">
+                <div class="emergency-contact">
+                    <div class="label">Prevenção de Suicídio</div>
+                    <div class="number">188</div>
+                    <a href="tel:188">Ligar Agora</a>
+                </div>
+                <div class="emergency-contact">
+                    <div class="label">Emergência</div>
+                    <div class="number">911</div>
+                    <a href="tel:911">Ligar Agora</a>
+                </div>
+                <div class="emergency-contact">
+                    <div class="label">Disque Denúncia</div>
+                    <div class="number">100</div>
+                    <a href="tel:100">Ligar Agora</a>
+                </div>
+                <div class="emergency-contact">
+                    <div class="label">Polícia Civil (BO Online)</div>
+                    <div class="number">147</div>
+                    <a href="tel:147">Ligar Agora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section style="text-align: center; margin-top: 4rem;">
+            <h2 class="section-title">Você Não Está Sozinho</h2>
+            <p class="section-subtitle">Existem pessoas e recursos disponíveis para ajudar. Procure apoio hoje.</p>
+            <div class="cta-buttons">
+                <a href="tel:188" class="btn btn-primary">Ligar CVV: 188</a>
+                <a href="mailto:contato@bullyingstop.com" class="btn btn-secondary">Enviar Email</a>
+            </div>
+        </section>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>🛡️ Bullying Stop</h3>
+            <p>Combatendo bullying e ciberbullying através da informação e apoio</p>
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#tipos">Tipos</a>
+                <a href="#impactos">Impactos</a>
+                <a href="#ajuda">Ajuda</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+                &copy; 2026 Bullying Stop. Todos os direitos reservados. | Licença MIT
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.image-card, .content-section, .stat-card, .emergency-section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
