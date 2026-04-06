@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Bullying Stop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-main">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Bullying Stop</h1>
+                <p class="sidebar-subtitle">Informação e Apoio</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="o-que-e-bullying.html" class="nav-link">O que é Bullying?</a>
+                <a href="impactos.html" class="nav-link">Impactos</a>
+                <a href="como-agir.html" class="nav-link">Como Agir</a>
+                <a href="recursos.html" class="nav-link">Recursos</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contato.html" class="nav-link active">Contato</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p class="sidebar-warning">Se você está em perigo, ligue para a polícia ou procure ajuda imediata.</p>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+                <h2 class="header-title">Entre em Contato</h2>
+                <a href="recursos.html" class="btn-help">Recursos</a>
+            </header>
+
+            <main class="page-content">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Entre em Contato</h1>
+                        <p class="hero-description">Tem dúvidas? Quer compartilhar sua história? Gostaria de colaborar? Entre em contato conosco.</p>
+                    </div>
+                </section>
+
+                <section class="sections">
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h2>Formas de Contato</h2>
+                            
+                            <div class="contact-item">
+                                <h3>📧 Email</h3>
+                                <p><a href="mailto:contato@bullyingstop.com">contato@bullyingstop.com</a></p>
+                                <p class="small-text">Responderemos em até 48 horas</p>
+                            </div>
+
+                            <div class="contact-item">
+                                <h3>☎️ Telefone</h3>
+                                <p><a href="tel:+5511999999999">(11) 9 9999-9999</a></p>
+                                <p class="small-text">Seg-Sex, 9h às 18h (Horário de Brasília)</p>
+                            </div>
+
+                            <div class="contact-item">
+                                <h3>📍 Localização</h3>
+                                <p>São Paulo, SP - Brasil</p>
+                                <p class="small-text">Atendimento online 24/7</p>
+                            </div>
+
+                            <div class="contact-item">
+                                <h3>🚨 Emergência</h3>
+                                <p><a href="tel:188">CVV: 188</a></p>
+                                <p class="small-text">Prevenção de suicídio - 24 horas</p>
+                            </div>
+                        </div>
+
+                        <form class="contact-form" id="contactForm">
+                            <h2>Envie uma Mensagem</h2>
+                            
+                            <div class="form-group">
+                                <label for="name">Nome *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Assunto *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="duvida">Tenho uma dúvida</option>
+                                    <option value="relato">Quero relatar bullying</option>
+                                    <option value="sugestao">Tenho uma sugestão</option>
+                                    <option value="colaboracao">Quero colaborar</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensagem *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">Concordo com a <a href="#">Política de Privacidade</a> *</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="sections" style="background-color: rgba(232, 230, 225, 0.3);">
+                    <div class="section-header">
+                        <h2>Canais de Ajuda Imediata</h2>
+                        <p>Se você está em perigo ou tendo pensamentos suicidas, procure ajuda profissional imediatamente.</p>
+                    </div>
+
+                    <div class="emergency-grid">
+                        <div class="emergency-card">
+                            <h3>☎️ CVV</h3>
+                            <p class="number">188</p>
+                            <p>Prevenção de suicídio</p>
+                            <a href="tel:188" class="btn btn-secondary">Ligar Agora</a>
+                        </div>
+
+                        <div class="emergency-card">
+                            <h3>🚨 Emergência</h3>
+                            <p class="number">911</p>
+                            <p>Situações de risco</p>
+                            <a href="tel:911" class="btn btn-secondary">Ligar Agora</a>
+                        </div>
+
+                        <div class="emergency-card">
+                            <h3>🚔 Disque Denúncia</h3>
+                            <p class="number">100</p>
+                            <p>Violação de direitos</p>
+                            <a href="tel:100" class="btn btn-secondary">Ligar Agora</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta">
+                    <h2>Você não está sozinho</h2>
+                    <p>Existem pessoas e recursos disponíveis para ajudar. Procure apoio hoje.</p>
+                    <div class="cta-buttons">
+                        <a href="recursos.html" class="btn btn-white">Ver Recursos</a>
+                        <a href="como-agir.html" class="btn btn-white-outline">Como Agir</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Sobre</h3>
+                        <p>Um site dedicado à conscientização, prevenção e combate ao bullying e ciberbullying.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="o-que-e-bullying.html">O que é Bullying?</a></li>
+                            <li><a href="impactos.html">Impactos</a></li>
+                            <li><a href="como-agir.html">Como Agir</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="#">Guias de Prevenção</a></li>
+                            <li><a href="#">Legislação</a></li>
+                            <li><a href="#">Materiais Educativos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacidade</a></li>
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Bullying Stop. Todos os direitos reservados.</p>
+                </div>
+            </footer>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: var(--foreground);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item a {
+            font-weight: 500;
+        }
+
+        .small-text {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--foreground);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--foreground);
+            background-color: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(90, 122, 140, 0.1);
+        }
+
+        .form-group.checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group.checkbox input {
+            width: auto;
+        }
+
+        .form-group.checkbox label {
+            margin-bottom: 0;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .emergency-card {
+            padding: 2rem;
+            background-color: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .emergency-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 0.5rem 0;
+        }
+
+        .emergency-card p {
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
